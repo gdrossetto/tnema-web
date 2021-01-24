@@ -29,7 +29,7 @@ const Home = () => {
       <h1 className="text-green-200 font-bold text-6xl text-center">
         Featured Movies
       </h1>
-      <div className="featured-movies">
+      <div className="item-list">
         {featured.map((movie, index) => {
           return (
             <article
