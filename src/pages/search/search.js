@@ -47,7 +47,7 @@ const Search = () => {
     <main className="pt-5">
       <div className="col-md-6 m-auto mb-5">
         <h1 className="mb-5">What are you looking for?</h1>
-        <form className="d-flex flex-row">
+        <form className="d-flex flex-row p-3">
           <input
             type="text"
             className="form-control"
