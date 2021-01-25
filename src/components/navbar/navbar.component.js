@@ -31,7 +31,7 @@ const Navbar = () => {
                 search: `?search=${searchString}`,
               });
             }}
-            className="d-flex ml-auto"
+            className="d-flex ms-auto"
           >
             <input
               className="form-control me-2"

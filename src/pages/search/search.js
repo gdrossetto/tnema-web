@@ -46,8 +46,8 @@ const Search = () => {
   return (
     <main>
       <div className="col-md-6 m-auto mb-5">
-        <h1 className="mb-5">What are you looking for?</h1>
-        <form className="flex flex-row">
+        <h1 className="mb-5 mt-5">What are you looking for?</h1>
+        <form className="d-flex flex-row">
           <input
             type="text"
             className="form-control"
