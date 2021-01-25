@@ -31,10 +31,8 @@ const Home = () => {
   }, [config]);
 
   return (
-    <main className="bg-gray-700 p-6">
-      <h1 className="text-green-200 font-bold text-6xl text-center">
-        Featured Movies
-      </h1>
+    <main className="pt-4">
+      <h1>Featured Movies</h1>
       <div className="item-list">
         {featured.map((movie, index) => {
           return <MovieCard movie={movie} config={config} />;

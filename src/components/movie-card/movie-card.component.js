@@ -13,12 +13,12 @@ const MovieCard = ({ movie, config }) => {
           pathname: `/movie/${movie.id}`,
         });
       }}
-      className="mb-8 shadow-xl p-4 hover:bg-green-300"
+      className="card"
       key={movie?.id}
     >
       {config?.poster_sizes ? (
         <img
-          className={"w-1/4"}
+          className={"card-img"}
           src={`${config?.base_url}${config?.poster_sizes[3]}${movie?.poster_path}`}
           alt=""
         />

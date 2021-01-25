@@ -44,11 +44,9 @@ const Search = () => {
   }, [query.get("search")]);
 
   return (
-    <main className="bg-gray-700 p-6">
-      <div className="md:w-1/2 m-auto mb-5">
-        <h1 className="text-green-200 font-bold text-5xl text-center mb-20">
-          What are you looking for?
-        </h1>
+    <main>
+      <div className="col-md-6 m-auto mb-5">
+        <h1 className="mb-5">What are you looking for?</h1>
         <form className="flex flex-row">
           <input
             type="text"
@@ -72,9 +70,7 @@ const Search = () => {
           </button>
         </form>
       </div>
-      <h1 className="text-green-200 font-bold text-5xl text-center">
-        Search Results
-      </h1>
+      <h1>Search Results</h1>
 
       <div className="item-list">
         {featured?.length > 0 ? (
@@ -82,7 +78,7 @@ const Search = () => {
             return <MovieCard movie={movie} config={config} />;
           })
         ) : (
-          <b className="text-center text-4xl text-white">No Results</b>
+          <b className="">No Results</b>
         )}
         <div className="invisible"></div>
         <div className="invisible"></div>
