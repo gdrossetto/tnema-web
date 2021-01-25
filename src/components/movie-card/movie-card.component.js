@@ -16,11 +16,13 @@ const MovieCard = ({ movie, config }) => {
       className="mb-8 shadow-xl p-4 hover:bg-green-300"
       key={movie?.id}
     >
-      <img
-        className={"w-1/4"}
-        src={`${config?.base_url}${config?.poster_sizes[3]}${movie?.poster_path}`}
-        alt=""
-      />
+      {config?.poster_sizes ? (
+        <img
+          className={"w-1/4"}
+          src={`${config?.base_url}${config?.poster_sizes[3]}${movie?.poster_path}`}
+          alt=""
+        />
+      ) : null}
     </article>
   );
 };
