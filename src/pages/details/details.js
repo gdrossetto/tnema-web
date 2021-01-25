@@ -25,15 +25,11 @@ const Details = () => {
   }, []);
 
   useEffect(() => {
-    console.log(config);
     getMovie();
   }, [config]);
 
   return (
-    <main className="bg-gray-700 py-6">
-      <h1 className="text-green-200 font-bold text-6xl text-center">
-        {movie?.original_title}
-      </h1>
+    <main className="bg-gray-700 pb-6">
       {config?.backdrop_sizes ? (
         <img
           className={"details-backdrop"}
@@ -41,8 +37,14 @@ const Details = () => {
           alt=""
         />
       ) : null}
-      <div className={"text-white text-center mx-auto my-8"}>
-        {movie.overview}
+      <div className="details-desc">
+        <h1 className="text-green-200 font-bold text-6xl text-center">
+          {movie?.original_title} ({movie?.release_date?.split("-")[0]})
+        </h1>
+
+        <div className={"text-white text-center mx-auto my-8 text-xl"}>
+          {movie.overview}
+        </div>
       </div>
     </main>
   );

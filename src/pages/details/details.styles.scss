@@ -1,10 +1,27 @@
 .details {
   &-backdrop {
-    width: 50%;
+    width: 100%;
+    height: 70vh;
+    object-fit: cover;
+    object-position: top;
     margin: auto;
-    margin-top: 32px;
-
+    margin-bottom: 32px;
+    border-bottom: 2px solid #a7f3d0;
     @media screen and (max-width: 768px) {
+      width: 100%;
+      height: 50vh;
+    }
+  }
+
+  &-desc {
+    padding: 0 32px;
+    width: 70%;
+    margin: auto;
+    @media screen and (max-width: 768px) {
+      h1 {
+        font-size: 32px;
+      }
+      padding: 0 16px;
       width: 100%;
     }
   }

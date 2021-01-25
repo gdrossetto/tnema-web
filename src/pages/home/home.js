@@ -1,6 +1,10 @@
 import "./home.styles.scss";
 import React, { useEffect, useState } from "react";
-import { getConfig, getMovies } from "../../services/movies.service.ts";
+import {
+  getConfig,
+  getMovies,
+  getMovieVideos,
+} from "../../services/movies.service.ts";
 import MovieCard from "../../components/movie-card/movie-card.component";
 
 const Home = () => {
@@ -19,6 +23,7 @@ const Home = () => {
 
   useEffect(() => {
     getMovieDbConfig();
+    getMovieVideos(464052);
   }, []);
 
   useEffect(() => {
