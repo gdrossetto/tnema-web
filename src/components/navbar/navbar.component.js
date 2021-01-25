@@ -7,10 +7,10 @@ const Navbar = () => {
   const history = useHistory();
 
   return (
-    <nav class="navbar navbar-expand-lg fixed-top navbar-dark bg-dark">
-      <div class="container-fluid">
+    <nav className="navbar navbar-expand-lg fixed-top navbar-dark bg-dark">
+      <div className="container-fluid">
         <button
-          class="navbar-toggler"
+          className="navbar-toggler"
           type="button"
           data-bs-toggle="collapse"
           data-bs-target="#navbarTogglerDemo03"
@@ -18,14 +18,12 @@ const Navbar = () => {
           aria-expanded="false"
           aria-label="Toggle navigation"
         >
-          <span class="navbar-toggler-icon"></span>
+          <span className="navbar-toggler-icon"></span>
         </button>
-        <Link to="/" replace>
-          <a class="navbar-brand" href="#">
-            <b>TNEMA</b>
-          </a>
+        <Link className="navbar-brand" to="/" replace>
+          <b>TNEMA</b>
         </Link>
-        <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+        <div className="collapse navbar-collapse" id="navbarTogglerDemo03">
           <form
             onSubmit={() => {
               history.push({
@@ -33,10 +31,10 @@ const Navbar = () => {
                 search: `?search=${searchString}`,
               });
             }}
-            class="d-flex ml-auto"
+            className="d-flex ml-auto"
           >
             <input
-              class="form-control me-2"
+              className="form-control me-2"
               type="search"
               placeholder="Search"
               aria-label="Search"
@@ -50,7 +48,7 @@ const Navbar = () => {
                     search: `?search=${searchString}`,
                   });
                 }}
-                class="btn btn-outline-secondary"
+                className="btn btn-outline-secondary"
                 type="submit"
               >
                 Search

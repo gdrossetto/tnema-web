@@ -48,14 +48,14 @@ const Search = () => {
 
   return (
     <main className="bg-gray-700 p-6">
-      <div class="w-1/2 m-auto mb-5">
+      <div className="w-1/2 m-auto mb-5">
         <h1 className="text-green-200 font-bold text-5xl text-center mb-20">
           What are you looking for?
         </h1>
         <form className="flex flex-row">
           <input
             type="text"
-            class="form-control"
+            className="form-control"
             id="searchString"
             value={searchString}
             aria-describedby="search"

@@ -1,6 +1,7 @@
 import "./home.styles.scss";
 import React, { useEffect, useState } from "react";
 import { getConfig, getMovies } from "../../services/movies.service.ts";
+import MovieCard from "../../components/movie-card/movie-card.component";
 
 const Home = () => {
   const [featured, setFeatured] = useState([]);
@@ -31,18 +32,7 @@ const Home = () => {
       </h1>
       <div className="item-list">
         {featured.map((movie, index) => {
-          return (
-            <article
-              className="mb-8 shadow-xl p-4 hover:bg-green-300"
-              key={movie?.id}
-            >
-              <img
-                className={"w-1/4"}
-                src={`${config.base_url}${config.poster_sizes[3]}${movie.poster_path}`}
-                alt=""
-              />
-            </article>
-          );
+          return <MovieCard movie={movie} config={config} />;
         })}
         <div className="invisible"></div>
         <div className="invisible"></div>

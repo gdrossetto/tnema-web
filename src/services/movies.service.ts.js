@@ -6,6 +6,14 @@ export async function getMovies() {
   return moviesJson;
 }
 
+export async function getMovieById(id) {
+  let movies = await fetch(
+    `https://api.themoviedb.org/3/movie/${id}?api_key=476a7e901b8459552d81da8f4a322ae7`
+  );
+  let moviesJson = await movies.json();
+  return moviesJson;
+}
+
 export async function searchMovies(search) {
   if (search) {
     let movies = await fetch(
