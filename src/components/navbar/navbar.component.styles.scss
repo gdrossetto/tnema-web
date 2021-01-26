@@ -1,3 +1,9 @@
 .navbar {
-  height: 60px;
+  min-height: 60px;
+
+  &-search{
+    @media screen and (max-width:768px) {
+      margin-top: 16px;
+    }
+  }
 }

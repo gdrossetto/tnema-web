@@ -16,6 +16,7 @@
   &-desc {
     padding: 0 32px;
     width: 70%;
+    max-width: 1000px;
     margin: auto;
     @media screen and (max-width: 768px) {
       h1 {
@@ -42,6 +43,52 @@
       margin-bottom: 2rem;
       font-size: 1.25rem;
       line-height: 1.75rem;
+    }
+  }
+
+  &-content {
+    width: 1000px;
+    border: 1px solid #a7f3d0;
+    margin: auto;
+
+    @media screen and (max-width: 768px) {
+      width: 80%;
+    }
+
+    &__poster {
+      height: 400px;
+      width: 270px;
+      border-right: 1px solid #a7f3d0;
+
+      @media screen and (max-width: 768px) {
+        width: 100%;
+        height: auto;
+      }
+    }
+
+    &__video {
+      iframe {
+        width: 728px;
+        height: 100%;
+        margin-right: auto;
+        display: block;
+
+        @media screen and (max-width: 768px) {
+          width: 100%;
+        }
+      }
+    }
+
+    &__overview {
+      color: white;
+      font-size: 18px;
+    }
+
+    &__section-title {
+      font-weight: bold;
+      font-size: 24px;
+      color: white;
+      margin-bottom: 16px;
     }
   }
 }

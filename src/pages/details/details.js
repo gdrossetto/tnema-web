@@ -41,8 +41,25 @@ const Details = () => {
         <h1 className="details-desc__title">
           {movie?.original_title} ({movie?.release_date?.split("-")[0]})
         </h1>
+      </div>
+      <div className="details-content mt-5">
+        <div className="d-md-flex flex-row">
+          {config?.poster_sizes ? (
+            <img
+              className={"details-content__poster"}
+              src={`${config?.base_url}${config?.poster_sizes[3]}${movie?.poster_path}`}
+              alt=""
+            />
+          ) : null}
 
-        <div className={"details-desc__overview"}>{movie.overview}</div>
+          <div className="details-content__video">
+            <iframe src="https://www.youtube.com/embed/tgbNymZ7vqY"></iframe>
+          </div>
+        </div>
+      </div>
+      <div className="details-content mt-5 p-4">
+        <div className="details-content__section-title">Overview</div>
+        <div className="details-content__overview">{movie?.overview}</div>
       </div>
     </main>
   );
