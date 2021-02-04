@@ -6,6 +6,7 @@ import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import Search from "./pages/search/search";
 import { createBrowserHistory } from "history";
 import Details from "./pages/details/details";
+import WatchList from "./pages/watchlist/watchlist";
 
 const history = createBrowserHistory();
 
@@ -18,6 +19,7 @@ function App() {
           <Route exact path="/" component={Home}></Route>
           <Route path="/search" component={Search}></Route>
           <Route path="/movie/:id" component={Details}></Route>
+          <Route path="/watchlist" component={WatchList}></Route>
         </Switch>
       </Router>
     </div>

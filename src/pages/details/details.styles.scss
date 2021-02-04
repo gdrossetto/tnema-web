@@ -92,3 +92,14 @@
     }
   }
 }
+
+.btn-add-watchlist{
+  border: 1px solid #a7f3d0;
+  color: #a7f3d0;
+  background: transparent;
+
+  &:hover{
+    background: #a7f3d0;
+    color: rgb(48, 48, 48);
+  }
+}

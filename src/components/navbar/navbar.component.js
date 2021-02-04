@@ -1,10 +1,24 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import { Link, useHistory } from "react-router-dom";
+import { getMovieGenres } from "../../services/movies.service.ts";
 import "./navbar.component.styles.scss";
 
 const Navbar = () => {
-  const [searchString, setSearchString] = useState("");
   const history = useHistory();
+  const movieTotal = useSelector(state => state.total);
+
+  const [searchString, setSearchString] = useState("");
+  const [generos,setGeneros] = useState([]);
+
+  async function getMovieGenreList(){
+    let genres = await getMovieGenres();
+    setGeneros(genres);
+  }
+
+  useEffect(()=>{
+    getMovieGenreList();
+  },[])
 
   return (
     <nav className="navbar navbar-expand-lg fixed-top navbar-dark bg-dark">
@@ -24,6 +38,7 @@ const Navbar = () => {
           <b>TNEMA</b>
         </Link>
         <div className="collapse navbar-collapse" id="navbarTogglerDemo03">
+
           <form
             onSubmit={() => {
               history.push({
@@ -31,10 +46,17 @@ const Navbar = () => {
                 search: `?search=${searchString}`,
               });
             }}
-            className="d-flex ms-auto navbar-search"
+            className="d-flex navbar-search"
           >
+            <select className="form-select ms-4">
+              <option>All</option>
+              {generos.map((genero)=>{
+                return(<option>{genero?.name}</option>)
+              
+              })}
+            </select>
             <input
-              className="form-control me-2"
+              className="form-control ms-2 col-md-6"
               type="search"
               placeholder="Search"
               aria-label="Search"
@@ -53,6 +75,14 @@ const Navbar = () => {
               >
                 Search
               </button>
+            </Link>
+            <Link to={'/watchlist'} replace>
+              <button
+                  className="btn btn-outline-secondary ms-4"
+                  type="button"
+                >
+                  <i class="fas fa-clipboard-list"></i>
+                </button>
             </Link>
           </form>
         </div>

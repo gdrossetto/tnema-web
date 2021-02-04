@@ -2,9 +2,12 @@ import "./details.styles.scss";
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { getConfig, getMovieById } from "../../services/movies.service.ts";
+import { useDispatch, useSelector } from "react-redux";
 
 const Details = () => {
   let { id } = useParams();
+  const dispatch = useDispatch();
+  const watchList = useSelector((state) => state.watchList)
 
   const [movie, setMovie] = useState({});
   const [config, setConfig] = useState({});
@@ -18,6 +21,10 @@ const Details = () => {
   async function getMovie() {
     let movieDetails = await getMovieById(id);
     setMovie(movieDetails);
+  }
+
+  function addMovieToWatchList(movie){
+    dispatch({type:'ADD_MOVIE_WATCHLIST',movie:movie});
   }
 
   useEffect(() => {
@@ -39,8 +46,9 @@ const Details = () => {
       ) : null}
       <div className="details-desc">
         <h1 className="details-desc__title">
-          {movie?.original_title} ({movie?.release_date?.split("-")[0]})
+          {movie?.original_title} {movie.release_date ? `(${movie?.release_date?.split("-")[0]})`  : null}
         </h1>
+        <button onClick={() => addMovieToWatchList(movie)} className="btn btn-add-watchlist m-auto d-block mt-4">Add to Watchlist</button>
       </div>
       <div className="details-content mt-5">
         <div className="d-md-flex flex-row">

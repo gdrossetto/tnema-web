@@ -1,9 +1,6 @@
 .card {
   margin-bottom: 32px;
-  padding: 0.25rem;
+  border: 2px solid #a7f3d0;
   cursor: pointer;
 
-  &:hover {
-    background: #a7f3d0;
-  }
 }
