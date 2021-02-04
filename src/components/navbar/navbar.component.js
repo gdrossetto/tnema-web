@@ -51,7 +51,7 @@ const Navbar = () => {
             <select className="form-select ms-4">
               <option>All</option>
               {generos.map((genero)=>{
-                return(<option>{genero?.name}</option>)
+                return(<option key={genero.id}>{genero?.name}</option>)
               
               })}
             </select>
@@ -81,7 +81,7 @@ const Navbar = () => {
                   className="btn btn-outline-secondary ms-4"
                   type="button"
                 >
-                  <i class="fas fa-clipboard-list"></i>
+                  <i className="fas fa-clipboard-list"></i>
                 </button>
             </Link>
           </form>

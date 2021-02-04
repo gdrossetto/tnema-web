@@ -23,7 +23,6 @@ const Home = () => {
 
   useEffect(() => {
     getMovieDbConfig();
-    getMovieVideos(464052);
   }, []);
 
   useEffect(() => {
@@ -35,7 +34,7 @@ const Home = () => {
       <h1>Featured Movies</h1>
       <div className="item-list">
         {featured.map((movie, index) => {
-          return <MovieCard movie={movie} config={config} />;
+          return <MovieCard key={movie?.id} movie={movie} config={config} />;
         })}
         <div className="invisible"></div>
         <div className="invisible"></div>

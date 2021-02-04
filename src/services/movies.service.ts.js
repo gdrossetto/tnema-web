@@ -48,6 +48,5 @@ export async function getMovieGenres(){
     `https://api.themoviedb.org/3/genre/movie/list?api_key=${apiKey}`
   );
   let generosJson = await generos.json();
-  console.log(generosJson.genres);
   return generosJson.genres;
 }

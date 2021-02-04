@@ -14,7 +14,6 @@ const Details = () => {
 
   async function getMovieDbConfig() {
     let configuration = await getConfig();
-    console.log(configuration);
     setConfig(configuration?.images);
   }
 
