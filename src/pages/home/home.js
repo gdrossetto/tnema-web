@@ -20,7 +20,6 @@ const Home = () => {
 
 
     useEffect(() => {
-        console.log(config)
         getFeaturedMovies();
     }, [config]);
 

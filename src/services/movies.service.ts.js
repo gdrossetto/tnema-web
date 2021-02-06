@@ -39,7 +39,6 @@ export async function getMovieVideos(movieId) {
     `https://api.themoviedb.org/3/movie/${movieId}/videos?api_key=${apiKey}`
   );
   let videosJson = await videos.json();
-  console.log(videosJson.results);
   return videosJson.results;
 }
 
