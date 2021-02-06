@@ -65,7 +65,7 @@ const Details = () => {
 
                     <div className="details-content__video">
                         {trailer ?
-                            <iframe src={`http://www.youtube.com/embed/${trailer}`}></iframe>
+                            <iframe src={`https://www.youtube.com/embed/${trailer}`}></iframe>
                             : null}
                     </div>
                 </div>
