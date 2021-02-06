@@ -1,21 +1,15 @@
 import "./details.styles.scss";
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import { getConfig, getMovieById } from "../../services/movies.service.ts";
+import { getMovieById } from "../../services/movies.service.ts";
 import { useDispatch, useSelector } from "react-redux";
 
 const Details = () => {
   let { id } = useParams();
   const dispatch = useDispatch();
-  const watchList = useSelector((state) => state.watchList)
+  const config = useSelector((state) => state.config);
 
   const [movie, setMovie] = useState({});
-  const [config, setConfig] = useState({});
-
-  async function getMovieDbConfig() {
-    let configuration = await getConfig();
-    setConfig(configuration?.images);
-  }
 
   async function getMovie() {
     let movieDetails = await getMovieById(id);
@@ -25,10 +19,6 @@ const Details = () => {
   function addMovieToWatchList(movie){
     dispatch({type:'ADD_MOVIE_WATCHLIST',movie:movie});
   }
-
-  useEffect(() => {
-    getMovieDbConfig();
-  }, []);
 
   useEffect(() => {
     getMovie();

@@ -1,29 +1,33 @@
-
 const initState = {
     total: 0,
     watchList: [],
-  }
-  
-  const Reducer = (state = initState, action) => {
-    switch (action.type){
-    
-        case "INCREASE_VALUE":
-          return {
-            ...state,
-            total: action.total
-          }
+    config: {},
+}
 
-          case "ADD_MOVIE_WATCHLIST":
+const Reducer = (state = initState, action) => {
+    switch (action.type) {
+
+        case "INCREASE_VALUE":
             return {
-              ...state,
-              watchList: state.watchList.concat(action.movie),
+                ...state,
+                total: action.total
             }
-          
-        // you can have as many case statements as you need
-          
-        default: 
-          return state
-      }
-  }
-  
-  export default Reducer
+
+        case "ADD_MOVIE_WATCHLIST":
+            return {
+                ...state,
+                watchList: state.watchList.concat(action.movie),
+            }
+
+        case "SET_CONFIG" :
+            return {
+                ...state,
+                config: action.config,
+            }
+
+        default:
+            return state
+    }
+}
+
+export default Reducer
